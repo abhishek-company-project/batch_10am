@@ -1,0 +1,147 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.css" integrity="sha512-kJlvECunwXftkPwyvHbclArO8wszgBGisiLeuDFwNM8ws+wKIw0sv1os3ClWZOcrEB2eRXULYUsm8OVRGJKwGA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgb(211, 244, 255);
+        }
+        .card{
+            height: 350px;
+            width: 450px;
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 2px 2px 55px rgb(205, 205, 205);
+        }
+        .time-profile{
+            height: 20%;
+            width: 100%;
+            /* background-color: blueviolet; */
+            /* border: 2px solid red; */
+            display: flex;
+            justify-content:space-between;
+            align-items: center;
+            padding: 0px 20px;
+
+        }
+        .time h3{
+            color: #5b5b5b;
+            font-size: 20px;
+        }
+        .time p{
+            color: #919191;
+            font-size: 18px;
+        }
+        .profile{
+            height: 50px;
+            width: 50px;
+            background-color: red;
+            border-radius:50% ;
+        }
+        .profile img{
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+
+        .horizontal{
+            border: 1px solid rgb(227, 227, 227);
+        }
+
+        .hospital-info{
+            height: 20%;
+            width: 100%;
+            /* background-color: blueviolet; */
+            /* border: 2px solid red; */
+            display: flex;
+            justify-content:space-between;
+            align-items: center;
+            padding: 0px 20px;
+
+        }
+        .name h2{
+            color: #5b5b5b;
+            font-size: 25px;
+        }
+        .name p{
+            color: #919191;
+            font-size: 18px;
+        }
+        .contact i{
+            font-size: 25px;
+            color: #919191;
+        }
+
+        .dr-info{
+            height: 20%;
+            width: 100%;
+            /* background-color: blueviolet; */
+            /* border: 2px solid red; */
+            display: flex;
+            justify-content:space-between;
+            align-items: center;
+            padding: 0px 20px;
+
+        }
+        .name h3{
+            color: #5b5b5b;
+            font-size: 20px;
+        }
+       
+        .price h2{
+            font-size: 25px;
+            color: #970cad;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="card">
+        <div class="time-profile">
+            <div class="time">
+                <h3>10:00 - 11:00 AM</h3>
+                <p>Monday, August 19</p>
+            </div>
+            <div class="profile">
+                <img src="https://i.pinimg.com/736x/de/85/b8/de85b8cf0db7f30ee8ce25834d5aa6d8.jpg" alt="">
+            </div>
+        </div>
+        <hr class="horizontal">
+
+        <div class="hospital-info">
+            <div class="name">
+                <h2>Medanta Hospital</h2>
+                <p>Token no:21</p>
+            </div>
+            <div class="contact">
+                <i class="ri-chat-3-line"></i>
+                <i class="ri-phone-line" style="color: #10B8B9;"></i>
+            </div>
+        </div>
+         <hr class="horizontal">
+
+
+        <div class="dr-info">
+            <div class="name">
+                <h3>Dr. Linda Lora <button>1 hr</button></h3>
+            </div>
+            <div class="price">
+                <h2>$123.00</h2>
+            </div>
+        </div>
+
+         <hr class="horizontal">
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,532 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.css"
+        integrity="sha512-kJlvECunwXftkPwyvHbclArO8wszgBGisiLeuDFwNM8ws+wKIw0sv1os3ClWZOcrEB2eRXULYUsm8OVRGJKwGA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Bricolage Grotesque", sans-serif;
+            /* font-family: 'Poppins', sans-serif; */
+        }
+
+        .main-container {
+            width: 100%;
+            height: 100vh;
+            background-image: url("https://i.pinimg.com/736x/e0/89/4b/e0894bee4f13a5ad1c013aed2b94326c.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .container-content {
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.671);
+        }
+
+        .container-content .navbar {
+            width: 100%;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 50px;
+        }
+
+        .navbar .logo-menu {
+            width: 50%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            color: white;
+        }
+
+        .navbar .info-search {
+            width: 450px;
+            height: 100%;
+        }
+
+        .navbar .logo-menu img {
+            width: 200px;
+            height: 80px;
+            object-fit: cover;
+        }
+
+        .navbar .logo-menu ul {
+            list-style: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .navbar .logo-menu ul li {
+            cursor: pointer;
+            font-size: 18px;
+            font-weight: 500;
+        }
+
+        .container-content .content-perent {
+            width: 100%;
+            height: calc(100% - 80px);
+            display: flex;
+            align-items: center;
+            padding: 50px;
+        }
+
+        .content-perent .content {
+            width: 50%;
+            height: 40%;
+        }
+
+        .content-perent .content h1 {
+            color: white;
+            font-size: 100px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            line-height: 80px;
+            width: 90%;
+
+        }
+
+        .content-perent .content p {
+            color: white;
+            font-size: 20px;
+            margin-bottom: 30px;
+            width: 80%;
+        }
+
+        .content-perent .content button {
+            padding: 15px 30px;
+            font-size: 18px;
+            font-weight: 500;
+            border: none;
+            background-color: #04A851;
+            color: white;
+            cursor: pointer;
+            border-radius: 50px;
+        }
+
+        .btn-logo {
+            font-size: 18px;
+            vertical-align: middle;
+            margin-left: 10px;
+            background-color: whitesmoke;
+            color: #04A851;
+            border-radius: 50%;
+            padding: 4;
+        }
+
+        .text-color {
+            color: #04A851;
+        }
+
+        .our-services-container {
+            width: 100%;
+            height: 100%;
+        }
+
+        .upper-services {
+            width: 100%;
+            height: 50%;
+            background: url("./hero_img.png"), url("why_choose_contener_2.png");
+            background-repeat: no-repeat, no-repeat;
+            background-size: 700px, 300px;
+            background-position: left, 1350px 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        .lowwer-services {
+            width: 100%;
+            height: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        .upper-content {
+            width: 40%;
+            height: 100%;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .upper-content p {
+            font-size: 14px;
+            color: #04A851;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .upper-content h1 {
+            font-size: 70px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            line-height: 55px;
+        }
+
+        .upper-content h6 {
+            font-size: 16px;
+            color: gray;
+            font-weight: 300;
+            line-height: 20px;
+        }
+
+        .lowwer-content {
+            width: 45%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 25px;
+            gap: 20px;
+        }
+
+        .lowwer-images {
+            width: 45%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .lowwer-images img {
+            width: 350px;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 15px;
+            margin: 0 10px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .lowwer-content-row {
+            width: 80%;
+            height: 100px;
+            background-color: rgb(255, 255, 255);
+            display: flex;
+            align-items: center;
+            padding: 20px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 20px;
+        }
+
+        .lowwer-content-row .row-img {
+            width: 80px;
+            height: 80px;
+            background-color: rgb(85, 64, 64);
+            border-radius: 50%;
+            margin-right: 20px;
+        }
+
+        .our-company-container {
+            width: 100%;
+            height: 100%;
+            background: url("https://i.pinimg.com/736x/ce/a3/47/cea347682c506542295431f4d8f44f6f.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .our-company-content {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, #F4F3F9 50%, #eeedf353);
+            padding-left: 250px;
+            padding-top: 100px;
+        }
+
+        .our-company-content p {
+            font-size: 14px;
+            color: #04A851;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+        
+
+        .our-company-content h1 {
+            font-size: 70px;
+            font-weight: 900;
+            margin-bottom: 20px;
+            line-height: 70px;
+            width: 50%;
+        }
+
+        .our-compamy-cards {
+            width: 90%;
+            /* border: 2px solid red; */
+            height: 70%;
+            display: flex;
+            align-items: center;
+            justify-content: start;
+            gap: 50px;
+            padding: 50px;
+            /* overflow: scroll; */
+            overflow-x: scroll;
+        }
+
+        .our-company-card {
+            min-width: 370px;
+            height: 450px;
+            background-color: white;
+            border-radius: 20px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 10px;
+        }
+
+        .our-company-card .card-image {
+            width: 100%;
+            height: 50%;
+            background-color: gray;
+            border-radius: 20px;
+        }
+
+        .card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 20px;
+        }
+
+        .our-company-card h1 {
+            font-size: 30px;
+            font-weight: 700;
+            margin-top: 40px;
+            margin-left: 20px;
+            line-height: 25px;
+            width: 100%;
+        }
+
+        .our-company-card hr {
+            border: none;
+            height: 2px;
+            background-color: #ececec;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        .our-company-card p {
+            font-size: 16px;
+            margin-left: 20px;
+            color: gray;
+            font-weight: 300;
+            line-height: 20px;
+        }
+
+        .btn-overlap {
+            height: 50px;
+            width: 50px;
+            background-color: rgb(255, 255, 255);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            top: -25px;
+            left: 260px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+
+            
+        }
+
+        .btn-overlap button {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: none;
+            background-color: #04A851;
+            color: white;
+            font-size: 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="main-container">
+        <div class="container-content">
+            <!-- navbar start -->
+            <div class="navbar">
+                <div class="logo-menu">
+                    <img src="Centro-Logo-removebg-preview.png" alt="">
+                    <ul>
+                        <li class="text-color">Home<i class="ri-arrow-drop-down-line"></i></li>
+                        <li>About<i class="ri-arrow-drop-down-line"></i></li>
+                        <li>Services<i class="ri-arrow-drop-down-line"></i></li>
+                        <li>Contact<i class="ri-arrow-drop-down-line"></i></li>
+                        <li>pages<i class="ri-arrow-drop-down-line"></i></li>
+                        <li>Blogs<i class="ri-arrow-drop-down-line"></i></li>
+                    </ul>
+                </div>
+                <div class="info-search"></div>
+            </div>
+            <!-- navbar end -->
+
+            <!-- container content start -->
+            <div class="content-perent">
+                <div class="content">
+                    <h1>Professianl <span class="text-color">cleaning</span> services</h1>
+                    <p>Professional cleaning services for homes, offices and commercial spaces. done right every time.
+                    </p>
+                    <button>Our Services <i class="ri-arrow-right-long-line btn-logo"></i></button>
+                </div>
+            </div>
+            <!-- container content end -->
+        </div>
+    </div>
+
+    <div class="our-services-container">
+        <div class="upper-services">
+            <div class="upper-content">
+                <p>ABOUT CLEANING AGENCY</p>
+                <h1>Why Should <span class="text-color">You Choose</span> Our Services?</h1>
+                <h6>We are committed to delivering exceptional cleaning services that leave your spaces
+                    ‘sparkling clean and hygienic. Our professional team uses eco-friendly products to ensure
+                    a safe and healthy environment for you.</h6>
+            </div>
+            <div class="upper-img"></div>
+        </div>
+
+        <div class="lowwer-services">
+            <div class="lowwer-content">
+                <div class="lowwer-content-row">
+                    <div class="row-img"></div>
+                    <div class="row-text">
+                        <h2>Professional Cleaning</h2>
+                        <p>Our team of experienced cleaners is dedicated to providing top-notch cleaning services for
+                            your home or office.</p>
+                    </div>
+                </div>
+                <div class="lowwer-content-row">
+                    <div class="row-img"></div>
+                    <div class="row-text">
+                        <h2>Professional Cleaning</h2>
+                        <p>Our team of experienced cleaners is dedicated to providing top-notch cleaning services for
+                            your home or office.</p>
+                    </div>
+                </div>
+                <div class="lowwer-content-row">
+                    <div class="row-img"></div>
+                    <div class="row-text">
+                        <h2>Professional Cleaning</h2>
+                        <p>Our team of experienced cleaners is dedicated to providing top-notch cleaning services for
+                            your home or office.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="lowwer-images">
+                <img src="https://i.pinimg.com/736x/a3/66/54/a366549975af3dee059ad6a6bee04867.jpg" alt="">
+                <img src="https://i.pinimg.com/1200x/ac/2d/39/ac2d39c59c6e18634211d51cb7454d31.jpg" alt="">
+            </div>
+        </div>
+    </div>
+
+
+    <div class="our-company-container">
+        <div class="our-company-content">
+            <p>fetured services</p>
+            <h1>our company <span class="text-color">provide the best</span> cleaning services</h1>
+            <div class="our-compamy-cards">
+                <div class="our-company-card">
+
+                    <div class="card-image">
+                        <img src="https://i.pinimg.com/1200x/f4/4a/54/f44a54a8c09d2bd208bb197de92ce114.jpg" alt="">
+                        <div class="btn-overlap">
+                            <button class=""><i class="ri-arrow-right-long-line"></i></button>
+                        </div>
+                    </div>
+                    <h1>residential services</h1>
+                    <hr>
+                    <p>We provide top-notch residential cleaning services to keep your home spotless and comfortable.
+                    </p>
+                </div>
+
+
+
+
+                <div class="our-company-card">
+                    <div class="card-image">
+                        <img src="https://i.pinimg.com/736x/ca/5e/39/ca5e3967dece4c74416654cc95dc972d.jpg" alt="">
+                         <div class="btn-overlap">
+                            <button class=""><i class="ri-arrow-right-long-line"></i></button>
+                        </div>
+                    </div>
+                    <h1>commercial services</h1>
+                    <hr>
+                    <p>We provide top-notch commercial cleaning services to keep your office or business spotless and
+                        professional.</p>
+                </div>
+                <div class="our-company-card">
+                    <div class="card-image">
+                        <img src="https://i.pinimg.com/1200x/74/c0/c8/74c0c84cf6273182a49e1bd876e740f6.jpg" alt="">
+                         <div class="btn-overlap">
+                            <button class=""><i class="ri-arrow-right-long-line"></i></button>
+                        </div>
+                    </div>
+                    <h1>office services</h1>
+                    <hr>
+                    <p>We provide top-notch office cleaning services to keep your workspace spotless and professional.
+                    </p>
+                </div>
+
+                <div class="our-company-card">
+                    <div class="card-image">
+                        <img src="https://i.pinimg.com/1200x/74/c0/c8/74c0c84cf6273182a49e1bd876e740f6.jpg" alt="">
+                         <div class="btn-overlap">
+                            <button class=""><i class="ri-arrow-right-long-line"></i></button>
+                        </div>
+                    </div>
+                    <h1>office services</h1>
+                    <hr>
+                    <p>We provide top-notch office cleaning services to keep your workspace spotless and professional.
+                    </p>
+                </div>
+                <div class="our-company-card">
+                    <div class="card-image">
+                        <img src="https://i.pinimg.com/1200x/74/c0/c8/74c0c84cf6273182a49e1bd876e740f6.jpg" alt="">
+                         <div class="btn-overlap">
+                            <button class=""><i class="ri-arrow-right-long-line"></i></button>
+                        </div>
+                    </div>
+                    <h1>office services</h1>
+                    <hr>
+                    <p>We provide top-notch office cleaning services to keep your workspace spotless and professional.
+                    </p>
+                </div>
+                <div class="our-company-card">
+                    <div class="card-image">
+                        <img src="https://i.pinimg.com/1200x/74/c0/c8/74c0c84cf6273182a49e1bd876e740f6.jpg" alt="">
+                         <div class="btn-overlap">
+                            <button class=""><i class="ri-arrow-right-long-line"></i></button>
+                        </div>
+                    </div>
+                    <h1>office services</h1>
+                    <hr>
+                    <p>We provide top-notch office cleaning services to keep your workspace spotless and professional.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
+</html>
