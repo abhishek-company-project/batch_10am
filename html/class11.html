@@ -1,0 +1,160 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+        .cards{
+            height: 45%;
+            width: 100%;
+            background-color: lightblue;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .cards .card{
+            height: 400px;
+            width: 350px;
+            background-color: lightcoral;
+            border-radius: 10px;
+            padding: 15px 10px;
+            position: relative;
+        }
+        .card .card-image{
+            height: 50px;
+            width: 50px;
+            /* border: 2px solid red; */
+            border-radius: 50%;
+        }
+        .card-image img{
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+        .card p{
+            /* border: 2px solid green; */
+            width: 95%;
+        }
+        .chat{
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            gap: 10px;
+            padding: 10px 0px;
+        }
+         .message{
+            /* max-width:max-content; */
+            /* max-width:max-content; */
+            width:fit-content;
+            /* width: 250px; */
+            padding: 10px;
+            border-radius: 10px;
+
+        }
+        .user{
+            background-color: rgb(215, 110, 110);
+        }
+        .you{
+            background-color: rgb(233, 149, 149);
+            align-self: flex-end;
+        }
+
+        .user-photo{
+            height: 45%;
+            width: 100%;
+            background-color: lightcyan;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+        .user-photo h1{
+            width: 50%;
+            text-align: center;
+        }
+
+        .user-image{
+            height: 70px;
+            width: 70px;
+            border-radius: 50%;
+            position: absolute;
+            overflow: hidden;
+        }
+        .user-image img{
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+        .user1{
+            background-color: lightseagreen;
+            top: 25px;
+            left: 300px;
+        }
+        .user2{
+            background-color: rgb(32, 100, 178);
+            left: 150px;
+        }
+        .user3{
+            background-color: rgb(76, 32, 178);
+            right: 100px;
+        }
+        .user4{
+            background-color: rgb(178, 32, 146);
+            right: 170px;
+            top: 50px;
+        }
+       
+    </style>
+</head>
+<body>
+
+    <div class="cards">
+        <div class="card">
+            <div class="card-image">
+                <img src="https://www.shutterstock.com/image-photo/headshot-portrait-smiling-little-girl-260nw-2579821615.jpg" alt="">
+            </div>
+            <h3>Jessica H.</h3>
+            <p>Lorem ipsum dolor sit amet cing elit. Dolo remque in porro nihil</p>
+            <div class="chat">
+                
+                <div class="message user">
+                    <p>Lorem ipsum dolor sit amet volupttas?</p>
+                </div>
+                <div class="message you">
+                    <p>Lorem</p>
+                </div>
+                 <div class="message user">
+                    <p>Lorem ipsum dolor sit tas?</p>
+                </div>
+                <div class="message you">
+                    <p>hello , how are you</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="user-photo">
+        <h1>Lorem ipsum dolor perspi ciatd, voluptate natus  earum.</h1>
+
+        <div class="user-image user1">
+            <img src="https://www.shutterstock.com/image-photo/passport-photo-portrait-asian-smiling-260nw-1045734418.jpg" alt="">
+        </div>
+        <div class="user-image user2">
+            <img src="https://t4.ftcdn.net/jpg/10/17/46/67/360_F_1017466748_sPimgAiwEJECag85DWHsrufuLsugsh6b.jpg" alt="">
+        </div>
+        <div class="user-image user3">
+            <img src="https://t4.ftcdn.net/jpg/16/31/77/45/360_F_1631774505_sDgMpbdgaodhcGjpJx4FFFG2iI7OvElC.jpg" alt="">
+        </div>
+        <div class="user-image user4">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTXBHTlPtcQ3vlpG4WWVWEDodciKwet3K7Wdg&s" alt="">
+        </div>
+    </div>
+    
+</body>
+</html>
