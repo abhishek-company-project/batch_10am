@@ -1,0 +1,45 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* h1{
+            background-color: red; 
+        } */
+    </style>
+</head>
+
+<body>
+    <h1 class="heading1">Hello user</h1>
+    <h1 class="heading1">Hello user</h1>
+    <h1 class="heading1">Hello user</h1>
+    <h1 class="heading1">Hello user</h1>
+    <button onclick="abc()">click</button>
+
+
+    <script>
+
+        // function abc() {
+        //     var h1 = document.querySelector(".heading1");
+        //     h1.style.color = "red"
+        //     h1.style.backgroundColor="black"
+        //     h1.style.textAlign="center"
+        // }
+        function abc() {
+            var h1 = document.querySelectorAll(".heading1");
+            for(var i=0;i<h1.length;i++){
+                h1[i].style.color="red"
+            }
+            console.log(h1)
+            
+        }
+
+
+
+    </script>
+
+</body>
+
+</html>
