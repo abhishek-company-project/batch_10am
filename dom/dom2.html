@@ -1,0 +1,46 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li>Abhishek</li>
+        <li>Aman</li>
+        <li>Jay</li>
+        <li>Keshav</li>
+        <li>Ram</li>
+    </ul>
+
+    <button onclick="evenColor()">change even list color</button>
+    <button onclick="oddColor()">change odd list color</button>
+
+    <script>
+
+        function evenColor(){
+            var li=document.querySelectorAll("li")
+            // li[2].style.color="red"
+            for(var i=0;i<li.length;i++){
+                if(i%2==1){
+                    li[i].style.color="red"
+                }
+            }
+            console.log(li)
+        }
+        function oddColor(){
+             var li=document.querySelectorAll("li")
+             for(var i=0;i<li.length;i++){
+                if(i%2==0){
+                    li[i].style.color="green"
+                }
+            }
+            console.log(li)
+            console.log("odd");
+            
+        }
+    </script>
+
+
+</body>
+</html>

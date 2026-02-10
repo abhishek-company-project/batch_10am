@@ -1,0 +1,27 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <h1>Hello <span>user</span></h1>
+    <input type="text">
+    <button onclick="changename()">change name</button>
+
+
+
+    <script>
+        function changename(){
+            var inp=document.querySelector("input")
+            var h1=document.querySelector("h1 span")
+            h1.innerText=inp.value
+            console.log(inp.value)
+        }
+    </script>
+
+    
+</body>
+</html>
