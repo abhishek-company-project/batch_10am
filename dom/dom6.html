@@ -1,0 +1,23 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 class="abc">Hello user</h1>
+    <img src="../project/Centro-Logo-removebg-preview.png" alt="">
+    <button>click</button>
+
+    <script>
+        var btn=document.querySelector("button")
+        btn.addEventListener("click",function(){
+            var h1=document.querySelector("h1")
+            var img=document.querySelector("img")
+            
+            h1.style.color="red"
+            img.setAttribute("src","../project/log.png")
+        })
+    </script>
+</body>
+</html>

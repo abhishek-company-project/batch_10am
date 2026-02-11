@@ -14,7 +14,34 @@
         <li>98989865</li>
     </ul>
 
-    <input type="text">
-    <button>check number</button>
+    <input type="text" id="forvalue">
+    <input type="text" id="forcolor">
+    <button onclick="checkNumber()">check number</button>
+
+    <script>
+        function checkNumber(){
+            var inp=document.querySelector("#forvalue").value;
+            var color=document.querySelector("#forcolor").value;
+            var lists=document.querySelectorAll("ul li")
+            var is_Exist=false;
+            for(var i=0;i<lists.length;i++){
+                if(lists[i].innerHTML==inp){
+                    is_Exist=true;
+                    lists[i].style.color=color
+                }
+                
+            }
+
+            if(is_Exist){
+                alert("number founded")
+            }
+            else{
+                alert("not found")
+            }
+
+            console.log(inp)
+            console.log(lists)
+        }
+    </script>
 </body>
 </html>
