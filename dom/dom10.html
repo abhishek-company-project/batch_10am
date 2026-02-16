@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gradient Contact List</title>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+        min-height: 100vh;
+        background: linear-gradient(135deg, #667eea, #764ba2);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .container {
+        width: 400px;
+        background: #ffffff;
+        padding: 25px;
+        border-radius: 15px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    }
+
+    h2 {
+        text-align: center;
+        margin-bottom: 20px;
+        color: #333;
+    }
+
+    .input-group {
+        display: flex;
+        gap: 10px;
+        margin-bottom: 15px;
+    }
+
+    input {
+        flex: 1;
+        padding: 10px;
+        border-radius: 8px;
+        border: 1px solid #ccc;
+        outline: none;
+    }
+
+    button {
+        padding: 10px 15px;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        font-weight: bold;
+        transition: 0.3s;
+    }
+
+    .add-btn {
+        background: linear-gradient(to right, #667eea, #764ba2);
+        color: white;
+    }
+
+    .add-btn:hover {
+        opacity: 0.8;
+    }
+
+    .search-box {
+        margin-bottom: 15px;
+    }
+
+    ul {
+        list-style: none;
+        max-height: 300px;
+        overflow-y: auto;
+    }
+
+    li {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px;
+        margin-bottom: 10px;
+        border-radius: 10px;
+        background: #f5f5f5;
+        transition: 0.3s;
+    }
+
+    li.active {
+        border-left: 5px solid #4CAF50;
+    }
+
+    li.inactive {
+        border-left: 5px solid #f44336;
+        opacity: 0.7;
+    }
+
+    .actions button {
+        margin-left: 5px;
+        padding: 5px 8px;
+        font-size: 12px;
+    }
+
+    .toggle-btn {
+        background: #2196F3;
+        color: white;
+    }
+
+    .delete-btn {
+        background: #f44336;
+        color: white;
+    }
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <h2>📞 Contact List</h2>
+
+    <div class="input-group">
+        <input type="text" id="contactInput" placeholder="Enter contact name">
+        <button class="add-btn" onclick="addContact()">Add</button>
+    </div>
+
+    <div class="search-box">
+        <input type="text" id="searchInput" placeholder="Search contact..." onkeyup="searchContact()">
+    </div>
+
+    <ul id="contactList"></ul>
+</div>
+
+<script>
+
+let contacts = JSON.parse(localStorage.getItem("contacts")) || [];
+
+function saveToStorage() {
+    localStorage.setItem("contacts", JSON.stringify(contacts));
+}
+
+function renderContacts(list = contacts) {
+    const contactList = document.getElementById("contactList");
+    contactList.innerHTML = "";
+
+    list.forEach((contact, index) => {
+        const li = document.createElement("li");
+        li.className = contact.active ? "active" : "inactive";
+
+        li.innerHTML = `
+            <span>${contact.name}</span>
+            <div class="actions">
+                <button class="toggle-btn" onclick="toggleStatus(${index})">
+                    ${contact.active ? "Deactivate" : "Activate"}
+                </button>
+                <button class="delete-btn" onclick="deleteContact(${index})">
+                    Delete
+                </button>
+            </div>
+        `;
+
+        contactList.appendChild(li);
+    });
+}
+
+function addContact() {
+    const input = document.getElementById("contactInput");
+    const name = input.value.trim();
+
+    if (name === "") {
+        alert("Please enter a contact name!");
+        return;
+    }
+
+    contacts.push({ name: name, active: true });
+    saveToStorage();
+    renderContacts();
+    input.value = "";
+}
+
+function deleteContact(index) {
+    contacts.splice(index, 1);
+    saveToStorage();
+    renderContacts();
+}
+
+function toggleStatus(index) {
+    contacts[index].active = !contacts[index].active;
+    saveToStorage();
+    renderContacts();
+}
+
+function searchContact() {
+    const searchValue = document.getElementById("searchInput").value.toLowerCase();
+    const filtered = contacts.filter(contact =>
+        contact.name.toLowerCase().includes(searchValue)
+    );
+    renderContacts(filtered);
+}
+
+renderContacts();
+
+</script>
+
+</body>
+</html>

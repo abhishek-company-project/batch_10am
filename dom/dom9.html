@@ -1,0 +1,84 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .inactive{
+            background-color: rgba(180, 83, 83, 0.419);
+            color: rgb(210, 24, 24);
+        }
+        .active{
+            background-color: rgba(55, 179, 111, 0.307);
+            color: rgb(8, 174, 83);
+        }
+        .list{
+            margin: 5px;
+            list-style: none;
+            padding: 3px 10px;
+        }
+    </style>
+
+</head>
+<body>
+    
+    <ul>
+        <li class="list ">abhishek</li>
+        <li class="list ">jay</li>
+        <li class="list">ram</li>
+    </ul>
+
+    <input type="text">
+    <input type="text" id="index"> 
+    <button>save name</button>
+    <button class="active-btn">active</button>
+    <button class="inactive-btn">inactive</button>
+
+    <script>
+
+
+        var active_btn=document.querySelector(".active-btn")
+
+        active_btn.addEventListener("click",function(){
+            var inp=document.querySelector("#index")
+            var ulli=document.querySelectorAll("ul li")
+            console.log(inp.value)
+            ulli[inp.value].classList.toggle("active")
+            // ulli[inp.value].setAttribute("class","active")
+
+        })
+
+
+
+        var inactive_btn=document.querySelector(".inactive-btn")
+
+  inactive_btn.addEventListener("click",function(){
+            var inp=document.querySelector("#index")
+            var ulli=document.querySelectorAll("ul li")
+            console.log(inp.value)
+            // ulli[inp.value].setAttribute("class","inactive")
+
+        })
+
+
+
+
+
+
+        var btn=document.querySelector("button")
+        btn.addEventListener("click",function(){
+            var inp=document.querySelector("input")
+            var ul=document.querySelector("ul")
+            console.log(inp.value)
+            var newli=document.createElement("li")
+            newli.innerText=inp.value;
+            ul.append(newli)
+            console.log(newli)
+
+        })
+
+    </script>
+
+</body>
+</html>

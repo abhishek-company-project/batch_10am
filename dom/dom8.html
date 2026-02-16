@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Image Gallery Design</title>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background: #f2f2f2;
+        }
+
+        .gallery-container {
+            width: 800px;
+            margin: 50px auto;
+            background: white;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+
+        /* Main Image Section */
+        .main-image {
+            position: relative;
+        }
+
+        .main-image img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border: 2px solid #ddd;
+        }
+
+        /* Arrow Buttons */
+        .arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.6);
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            font-size: 20px;
+        }
+
+        .prev {
+            left: 10px;
+        }
+
+        .next {
+            right: 10px;
+        }
+
+        /* Thumbnails Section */
+        .thumbnail-container {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .thumbnail-container img {
+            width: 100px;
+            height: 70px;
+            object-fit: cover;
+            border: 2px solid #ccc;
+            cursor: pointer;
+        }
+
+        .thumbnail-container img:hover {
+            border: 2px solid #000;
+        }
+
+        /* Change Image Button */
+        .change-button {
+            margin-top: 20px;
+        }
+
+        .change-button button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            background: #007bff;
+            color: white;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="gallery-container">
+
+        <h2>Image Gallery</h2>
+
+        <div class="main-image">
+            <button class="arrow prev">prev &#10094; </button>
+
+            <img src="https://i.pinimg.com/1200x/0d/31/8d/0d318d1fe7c8d283f5a11f234250400f.jpg" alt="Main Image">
+
+            <button class="arrow next">next &#10095;</button>
+        </div>
+        <div class="thumbnail-container">
+            <img src="https://i.pinimg.com/736x/76/7a/c7/767ac7ce08c2fc341e1b0b4e00bbd17e.jpg" alt="thumb1">
+            <img src="https://i.pinimg.com/736x/75/65/cf/7565cf244fcb2d7b3c41d8ee5f5863ca.jpg" alt="thumb2">
+            <img src="https://i.pinimg.com/1200x/a9/6e/56/a96e567b90b78b43fea0184fb2c277ec.jpg" alt="thumb2">
+            <img src="https://i.pinimg.com/1200x/0d/31/8d/0d318d1fe7c8d283f5a11f234250400f.jpg" alt="thumb3">
+            <img src="https://i.pinimg.com/736x/5c/77/f4/5c77f429e53d17ad4877e127b8cea48b.jpg" alt="thumb4">
+            <img src="https://i.pinimg.com/736x/fb/ea/7c/fbea7cb02cbd168d3e6aec79652d10c1.jpg" alt="thumb5">
+        </div>
+
+        <div class="change-button">
+            <button>Change Image</button>
+        </div>
+
+    </div>
+
+
+    <script>
+        var prev = document.querySelector(".prev")
+        var next = document.querySelector(".next")
+
+        var belowimg = document.querySelectorAll(".thumbnail-container img")
+
+        var belowimgarray = []
+
+
+        for (var i = 0; i < belowimg.length; i++) {
+            belowimgarray.push(belowimg[i].getAttribute("src"))
+
+        }
+
+        console.log(belowimgarray)
+
+        prev.addEventListener("click", function () {
+            var mainimg = document.querySelector(".main-image img")
+            var mainsrc = mainimg.getAttribute("src")
+            var currentind = belowimgarray.indexOf(mainsrc)
+            var currentind = belowimgarray.indexOf(mainsrc)
+            console.log(currentind)
+            if (currentind == 0) {
+                currentind = belowimgarray.length - 1
+            }
+
+            mainimg.setAttribute("src", belowimgarray[currentind - 1])
+
+        })
+        next.addEventListener("click", function () {
+            var mainimg = document.querySelector(".main-image img")
+            var mainsrc = mainimg.getAttribute("src")
+            var currentind = belowimgarray.indexOf(mainsrc)
+            console.log(currentind)
+            if (currentind == belowimgarray.length - 1) {
+                currentind = -1
+            }
+
+            mainimg.setAttribute("src", belowimgarray[currentind + 1])
+        })
+
+    </script>
+
+</body>
+
+</html>
+
+<!-- selector -->
+ <!-- addeventlistener onlick -->
+  <!-- innertext , innerhtml -->
+   <!-- style -->
+    <!-- input.value -->
+     <!-- setatribute and get attribute -->
